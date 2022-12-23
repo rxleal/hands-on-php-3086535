@@ -8,7 +8,12 @@
 		<main>
 			<?php 
 				if ( isset( $_POST['submit'] ) ) {
-					echo '<h3>Number submitted!</h3>';
+					$num = (int)$_POST['number'];
+					if(is_int($num) && $num > 0){
+						echo "<h3>VALIDADO</h3>";
+					}else{
+						echo "<h3>INVALIDO</h3>";
+					}
 				}
 			?>
 			<form name="submit_number" method="POST">
